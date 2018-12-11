@@ -5,12 +5,23 @@ output: html_notebook
 
 ```{r}
 load('../cache/data_seed.RData')
+library(plyr)
+library(dplyr)
+library(lattice)
 ```
+
+## Resumo dos dados
+
+Dados extraidos dos Google Anlytics do site Seed-MG
 
 ```{r}
 print(summary(data_seed$sessions))
 ```
 
+
+```{r}
+lattice::histogram(~users, data = data_seed$sessions, breaks = 64)
+```
 
 
 ```{r}
