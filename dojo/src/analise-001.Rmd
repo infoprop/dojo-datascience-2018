@@ -68,8 +68,50 @@ data_seed$sessions %>%
   dplyr::mutate(ltotal = log10(total)) %>% 
   lattice::xyplot(ltotal ~ date, data = ., type = 'l', groups = region)
 ```
+```{r}
+data_seed$sessions %>% 
+  dplyr::filter(grepl('minas gerais|sao paulo|rio de janeiro|parana|santa catarina|rio grande do sul', region, TRUE)) %>% 
+  dplyr::mutate(period = paste0(lubridate::year(date), '-', lubridate::month(date))) %>% 
+  dplyr::group_by(period, date, region) %>% 
+  dplyr::summarise(total = sum(users)) %>% 
+  dplyr::mutate(ltotal = log10(total)) %>% 
+  lattice::xyplot(ltotal ~ date|period, data = ., type = 'l', groups = region, 
+                  scales = list(x = 'free', y = 'free'))
+```
+```{r}
+x <- data_seed$sessions %>% 
+  dplyr::filter(grepl('minas gerais|sao paulo|rio de janeiro|parana|santa catarina|rio grande do sul', region, TRUE)) %>% 
+  dplyr::select(date, region, users) %>% 
+  dplyr::group_by(date, region) %>% 
+  dplyr::summarise(users = sum(users)) %>% 
+  tidyr::spread(key = 'region', 'users') %>%
+  select(-2)
+
+cor(na.omit(x[,-1]))
+```
 
 
+```{r}
+lattice::splom(~x[,-1], pch = 16, cex = 0.5)
+```
+
+```{r}
+x <- data_seed$sessions %>% 
+  dplyr::filter(grepl('minas gerais|sao paulo|rio de janeiro|parana|santa catarina|rio grande do sul', region, TRUE)) %>% 
+  dplyr::select(date, region, users) %>% 
+  dplyr::group_by(date, region) %>% 
+  dplyr::summarise(users = sum(users)) %>% 
+  tidyr::spread(key = 'region', 'users') %>%
+  select(-2)
+
+xpca <- prcomp(na.omit(x[,-1]))
+
+print(xpca)
+```
+
+```{r}
+plot(xpca)
+```
 ```{r}
 print(head(data_seed$sessions))
 ```
