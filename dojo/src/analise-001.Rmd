@@ -46,11 +46,28 @@ data_seed$sessions %>%
 ```
 ```{r}
 data_seed$sessions %>% 
+  dplyr::filter(grepl('minas gerais|sao paulo|rio de janeiro', region, TRUE)) %>% 
   dplyr::group_by(date, region) %>% 
   dplyr::summarise(total = sum(users)) %>% 
-  lattice::xyplot(total ~ date, data = ., type = 'l', groups = region)
+  dplyr::mutate(ltotal = log10(total)) %>% 
+  lattice::xyplot(ltotal ~ date, data = ., type = 'l', groups = region, auto.key = TRUE)
 ```
 
+```{r}
+data_seed$sessions %>% 
+  dplyr::group_by(region) %>% 
+  dplyr::summarise(total = sum(users)) %>% 
+  dplyr::arrange(dplyr::desc(total)) %>% 
+  print()
+```
+```{r}
+data_seed$sessions %>% 
+  dplyr::filter(grepl('minas gerais|sao paulo|rio de janeiro|parana|santa catarina|rio grande do sul', region, TRUE)) %>% 
+  dplyr::group_by(date, region) %>% 
+  dplyr::summarise(total = sum(users)) %>% 
+  dplyr::mutate(ltotal = log10(total)) %>% 
+  lattice::xyplot(ltotal ~ date, data = ., type = 'l', groups = region)
+```
 
 
 ```{r}
