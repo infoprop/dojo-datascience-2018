@@ -4,11 +4,11 @@ data_loading_header: TRUE
 data_ignore:
 cache_loading: TRUE
 recursive_loading: FALSE
-munging: TRUE
+munging: FALSE
 logging: FALSE
 logging_level: INFO
 load_libraries: TRUE
-libraries: plyr, dplyr, stringr, lattice, latticeExtra, ggplot2
+libraries: plyr, dplyr, stringr, lattice, latticeExtra, ggplot2, googleAuthR, googleAnalyticsR, plotly
 as_factors: FALSE
 data_tables: FALSE
 attach_internal_libraries: FALSE
