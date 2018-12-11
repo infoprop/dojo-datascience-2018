@@ -44,6 +44,12 @@ data_seed$sessions %>%
   dplyr::summarise(mean = mean(users)) %>% 
   lattice::xyplot(mean ~ date, data = ., type = 'l')
 ```
+```{r}
+data_seed$sessions %>% 
+  dplyr::group_by(date, region) %>% 
+  dplyr::summarise(total = sum(users)) %>% 
+  lattice::xyplot(total ~ date, data = ., type = 'l', groups = region)
+```
 
 
 
