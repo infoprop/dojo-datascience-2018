@@ -20,7 +20,9 @@ print(summary(data_seed$sessions))
 
 
 ```{r}
-lattice::histogram(~users, data = data_seed$sessions, breaks = 64)
+data_seed$sessions %>% 
+  dplyr::filter(sessions <= 10) %>% 
+  lattice::histogram(~users, data = ., breaks = 16)
 ```
 
 
