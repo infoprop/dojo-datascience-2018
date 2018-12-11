@@ -25,6 +25,27 @@ data_seed$sessions %>%
   lattice::histogram(~users, data = ., breaks = 16)
 ```
 
+```{r}
+data_seed$sessions %>% 
+  dplyr::filter(sessions <= 10) %>%
+  lattice::xyplot(sessions ~ date, data = ., type = 'l')
+```
+```{r}
+data_seed$sessions %>% 
+  dplyr::filter(sessions <= 10) %>%
+  dplyr::group_by(date) %>% 
+  dplyr::summarise(mean = mean(sessions)) %>% 
+  lattice::xyplot(mean ~ date, data = ., type = 'l')
+```
+
+```{r}
+data_seed$sessions %>% 
+  dplyr::group_by(date) %>% 
+  dplyr::summarise(mean = mean(users)) %>% 
+  lattice::xyplot(mean ~ date, data = ., type = 'l')
+```
+
+
 
 ```{r}
 print(head(data_seed$sessions))
