@@ -3,3 +3,11 @@ title: "Analise Dados"
 output: html_notebook
 ---
 
+```{r}
+load('../cache/data_seed.RData')
+```
+
+```{r}
+print(head(data_seed$sessions))
+```
+
