@@ -248,6 +248,29 @@ $(document).ready(function () {
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucHJpbnQoc3VtbWFyeShkYXRhX3NlZWQkc2Vzc2lvbnMpKVxuYGBgIn0= -->
+<pre class="r"><code>print(summary(data_seed$sessions))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICAgZGF0ZSAgICAgICAgICAgICAgICBjaXR5ICAgICAgICAgICAgICByZWdpb24gICAgICAgICAgICAgc2Vzc2lvbnMgICAgICBcbiBNaW4uICAgOjIwMTctMDEtMDEgICBMZW5ndGg6Mjg1MTkgICAgICAgTGVuZ3RoOjI4NTE5ICAgICAgIE1pbi4gICA6ICAgMC4wMCAgXG4gMXN0IFF1LjoyMDE3LTA1LTIzICAgQ2xhc3MgOmNoYXJhY3RlciAgIENsYXNzIDpjaGFyYWN0ZXIgICAxc3QgUXUuOiAgIDEuMDAgIFxuIE1lZGlhbiA6MjAxNy0xMS0xOSAgIE1vZGUgIDpjaGFyYWN0ZXIgICBNb2RlICA6Y2hhcmFjdGVyICAgTWVkaWFuIDogICAxLjAwICBcbiBNZWFuICAgOjIwMTctMTEtMTggICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIE1lYW4gICA6ICAgNC4wNiAgXG4gM3JkIFF1LjoyMDE4LTA1LTAyICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAzcmQgUXUuOiAgIDIuMDAgIFxuIE1heC4gICA6MjAxOC0xMS0zMCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgTWF4LiAgIDoxNTA1LjAwICBcbiAgICBib3VuY2VzICAgICAgICAgc2Vzc2lvbkR1cmF0aW9uICAgICAgICB1c2VycyAgICAgICAgICAgICBuZXdVc2VycyAgICAgIFxuIE1pbi4gICA6ICAgMC4wMDAgICBNaW4uICAgOiAgICAgMC4wICAgTWluLiAgIDogICAxLjAwMCAgIE1pbi4gICA6ICAwLjAwMCAgXG4gMXN0IFF1LjogICAxLjAwMCAgIDFzdCBRdS46ICAgICAwLjAgICAxc3QgUXUuOiAgIDEuMDAwICAgMXN0IFF1LjogIDEuMDAwICBcbiBNZWRpYW4gOiAgIDEuMDAwICAgTWVkaWFuIDogICAgIDAuMCAgIE1lZGlhbiA6ICAgMS4wMDAgICBNZWRpYW4gOiAgMS4wMDAgIFxuIE1lYW4gICA6ICAgMi42MzUgICBNZWFuICAgOiAgIDUxMy40ICAgTWVhbiAgIDogICAzLjU2NSAgIE1lYW4gICA6ICAyLjUxNiAgXG4gM3JkIFF1LjogICAxLjAwMCAgIDNyZCBRdS46ICAgMTQxLjAgICAzcmQgUXUuOiAgIDIuMDAwICAgM3JkIFF1LjogIDEuMDAwICBcbiBNYXguICAgOjEwMjMuMDAwICAgTWF4LiAgIDo1ODM4NjYuMCAgIE1heC4gICA6MTE4Ny4wMDAgICBNYXguICAgOjg0Ni4wMDAgIFxuIn0= -->
+<pre><code>      date                city              region             sessions      
+ Min.   :2017-01-01   Length:28519       Length:28519       Min.   :   0.00  
+ 1st Qu.:2017-05-23   Class :character   Class :character   1st Qu.:   1.00  
+ Median :2017-11-19   Mode  :character   Mode  :character   Median :   1.00  
+ Mean   :2017-11-18                                         Mean   :   4.06  
+ 3rd Qu.:2018-05-02                                         3rd Qu.:   2.00  
+ Max.   :2018-11-30                                         Max.   :1505.00  
+    bounces         sessionDuration        users             newUsers      
+ Min.   :   0.000   Min.   :     0.0   Min.   :   1.000   Min.   :  0.000  
+ 1st Qu.:   1.000   1st Qu.:     0.0   1st Qu.:   1.000   1st Qu.:  1.000  
+ Median :   1.000   Median :     0.0   Median :   1.000   Median :  1.000  
+ Mean   :   2.635   Mean   :   513.4   Mean   :   3.565   Mean   :  2.516  
+ 3rd Qu.:   1.000   3rd Qu.:   141.0   3rd Qu.:   2.000   3rd Qu.:  1.000  
+ Max.   :1023.000   Max.   :583866.0   Max.   :1187.000   Max.   :846.000  </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucHJpbnQoaGVhZChkYXRhX3NlZWQkc2Vzc2lvbnMpKVxuYGBgIn0= -->
 <pre class="r"><code>print(head(data_seed$sessions))</code></pre>
 <!-- rnb-source-end -->
@@ -262,7 +285,7 @@ $(document).ready(function () {
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiQW5hbGlzZSBEYWRvcyIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKYGBge3J9CmxvYWQoJy4uL2NhY2hlL2RhdGFfc2VlZC5SRGF0YScpCmBgYAoKYGBge3J9CnByaW50KGhlYWQoZGF0YV9zZWVkJHNlc3Npb25zKSkKYGBgCgo=</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiQW5hbGlzZSBEYWRvcyIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKYGBge3J9CmxvYWQoJy4uL2NhY2hlL2RhdGFfc2VlZC5SRGF0YScpCmBgYAoKYGBge3J9CnByaW50KHN1bW1hcnkoZGF0YV9zZWVkJHNlc3Npb25zKSkKYGBgCgoKCmBgYHtyfQpwcmludChoZWFkKGRhdGFfc2VlZCRzZXNzaW9ucykpCmBgYAoK</div>
 
 
 

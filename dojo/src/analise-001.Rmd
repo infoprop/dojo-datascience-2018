@@ -8,6 +8,12 @@ load('../cache/data_seed.RData')
 ```
 
 ```{r}
+print(summary(data_seed$sessions))
+```
+
+
+
+```{r}
 print(head(data_seed$sessions))
 ```
 
